@@ -8,76 +8,7 @@
 	<title>Google maps dojazd</title>
 	<link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
 	<link rel="stylesheet" href="https://cdn.rawgit.com/driftyco/ionicons/3.0/dist/css/ionicons.css">
-	<style type="text/css">
-		* {
-			border-radius: 0px !important;
-		}
-
-		#map_canvas {
-			width:100%;
-			height:300px
-		}
-
-		#routeForm {
-			width: 100%;
-			text-align: center;
-			margin-top: 20px;
-		}
-		#directionsPanel {
-			background: #FFFFFF;
-			width: 800px;
-			padding: 20px;
-			margin: 0 auto;
-		}
-		.adp-directions {
-			width: 100%;
-		}
-
-		[class^="icon-"],
-		[class*=" icon-"] {
-			font-family: Ionicons;
-		}
-		.icon-bike:before{
-			content:"\f127";
-		}
-		.icon-walking:before {
-			content: "\f266";
-		}
-
-		.icon-car:before {
-			content:"\f140";
-		}
-
-		.icon-transit:before {
-			content:"\f139";
-		}
-
-		label span {
-			display: block;
-			font-size: 2rem;
-			width: 50px;
-			border: 1px solid #c0c0c0;
-		}
-
-		label > input:checked + span {
-			border:1px solid #f00;
-		}
-
-		.adp-marker {
-			display: none;
-		}
-		.adp-text:before {
-			font-family: Ionicons;
-			content: "\f1e4";
-			font-size: 1.5rem;
-			margin-right: 5px;
-		}
-
-		.adp-legal {
-			font-size: .7rem;
-		}
-
-	</style>
+	<link rel="stylesheet" href="assets/css/gmRoute.css">
 </head>
 <body>
 <div class="container-fluid">
@@ -137,6 +68,6 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 	<!-- <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script> -->
 	<script src="https://maps.google.com/maps/api/js?key=<?= $data['key'] ?>"></script>
-	<script src="js/scripts.js"></script>
+	<script src="assets/js/gmRoute.js"></script>
 </body>
 </html>
