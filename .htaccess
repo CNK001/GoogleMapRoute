@@ -1,0 +1,39 @@
+<IfModule mod_headers.c>
+# Set XSS Protection header
+Header set X-XSS-Protection "1; mode=block"
+</IfModule>
+
+<FilesMatch index.php$>
+Header set X-Content-Security-Policy "allow 'self'; media-src *; img-src *; script-src 'self' https://ajax.googleapis.com; style-src 'self';"
+</FilesMatch>
+
+# Default document charset
+<Files ~ "\.(htm|html|css|js|php)$">
+AddDefaultCharset UTF-8
+DefaultLanguage pl
+</Files>
+
+# Follow symbolic links in this directory
+Options -Indexes +FollowSymLinks
+#IndexIgnore *
+
+# Compress HTML & TXT:
+SetOutputFilter DEFLATE
+AddOutputFilterByType DEFLATE text/html
+
+# Default index
+DirectoryIndex index.htm index.html index.php
+
+# Redirect 301 from "WWW" to "NON-WWW"
+RewriteEngine On
+RewriteBase /
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+
+# Redirect 301 from index to main domain
+RewriteRule ^index.(php|html|htm)$ / [R=301,L]
+RewriteRule ^([a-z0-9-_]+)/index.(php|html|htm)$ /$1/ [R=301,L]
+
+<Files config.ini>
+Deny from all
+</Files>
