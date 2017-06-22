@@ -20,20 +20,23 @@
 		<div id="map_canvas"></div>
 	</div>
 	<div class="gmRoute-form">
-		<form onSubmit="calcRoute();return false;" id="routeForm">
+		<div id="routeForm">
 			<div class="row">
-				<div class="col col-md-3 col-xl-3 col-xxl-2 ml-auto">
+				<div class="col col-md-3 col-xl-3 col-xxl-2 ml-auto mr-2 text-right">
 					<div class="row">
 						<div class="col-12">
+							<div><small>Twoja lokalizacja:</small></div>
 							<div class="input-group">
 								<input type="text" id="routeStart" class="form-control" placeholder="Twoja lokalizacja...">
 								<span class="input-group-btn"><!-- Calculate route -->
-									<button class="btn btn-secondary" type="submit"><i class="icon ion-ios-search"></i></button>
+									<button class="btn btn-secondary" id="calculate-route">
+										<i class="icon ion-ios-search"></i>
+									</button>
 								</span>
 							</div>
 						</div>
 						<div class="col-12">
-							<div class="h5">Środek transportu<!-- Travel mode -->:</div>
+							<div><small>Środek transportu</small><!-- Travel mode -->:</div>
 								<label>
 									<input type="radio" name="travelMode" value="DRIVING" hidden checked />
 									<span class="icon-travel-mode icon-check icon-car" data-toggle="tooltip" title="Samochód"></span><!-- Driving -->
@@ -50,16 +53,28 @@
 									<input type="radio" name="travelMode" value="WALKING" hidden />
 									<span class="icon-travel-mode icon-check icon-walking" data-toggle="tooltip" title="Pieszo"></span><!-- Walking -->
 								</label>
+
+								<button id="show-more" class="btn btn-primary btn-sm invisible" data-toggle="modal" data-target=".modal-show-directions">Pokaż szczegóły dojazdu</button>
 						</div><!-- Calculate route -->
 					</div>
 				</div>
 			</div>
-		</form>
+		</div>
 	</div>
-	<div id="directionsPanel">
-		s
-		<!-- Enter a destination and click "Calculate route". -->
+
+<div class="modal fade modal-show-directions" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true" class="ion-ios-close-outline"></span>
+			</button>
+			<div class="modal-body">
+				<div id="directionsPanel">...</div>
+			</div>
+		</div>
 	</div>
+</div>
+
 </div>
 <footer class="text-center">
 	<a href="https://spoko.space">spoko.space</a>
@@ -67,7 +82,8 @@
 
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-	<!-- <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script> -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+	<script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
 	<script src="https://maps.google.com/maps/api/js?key=<?= $data['key'] ?>"></script>
 	<script src="assets/js/gmRoute.js"></script>
 </body>

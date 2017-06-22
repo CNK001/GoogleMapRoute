@@ -3,7 +3,7 @@ var lng = 19.019633;
 var map;
 var directionDisplay;
 var directionsService = new google.maps.DirectionsService(lat,lng);
-
+var show_more = document.getElementById('show-more');
 var iconBase = 'https://cnk.net.pl/testy/img/';
 var icons = {
 	darkgrey: {
@@ -25,7 +25,7 @@ var icons = {
 		icon: iconBase + 'navy-blue-marker.png'
 	}
 };
-var default_icon = 'caribbeanblue';
+var default_icon = 'navyblue';
 
 
 
@@ -53,11 +53,23 @@ function initialize() {
 		icon: icons[default_icon].icon
 	});
 }
+
+
+document.getElementById('routeStart').onkeypress = function(e){
+	if (!e) e = window.event;
+	var keyCode = e.keyCode || e.which;
+	if (keyCode == '13') {
+		// Enter pressed
+		// return false;
+		calcRoute();return false;
+	}
+}
+
 function calcRoute() {
 
 	// get the travelmode, startpoint and via point from the form
 	var travelMode = $('input[name="travelMode"]:checked').val();
-	var start = $("#routeStart").val();
+	var start = document.getElementById("routeStart").value
 	// var via = $("#routeVia").val();
 
 	if (travelMode == 'TRANSIT') {
@@ -76,7 +88,7 @@ function calcRoute() {
 		origin: start,
 		destination: end,
 		waypoints: waypoints,
-		unitSystem: google.maps.UnitSystem.IMPERIAL,
+		unitSystem: google.maps.UnitSystem.METRIC, //IMPERIAL for miles, METRIC for km
 		travelMode: google.maps.DirectionsTravelMode[travelMode]
 	};
 	directionsService.route(request, function(response, status) {
@@ -85,6 +97,7 @@ function calcRoute() {
 			directionsDisplay.setDirections(response);
 			//clean A and B markers
 			directionsDisplay.setOptions( { suppressMarkers: true } );
+			show_more.classList.remove("invisible");
 		} else {
 			// alert an error message when the route could nog be calculated.
 			if (status == 'ZERO_RESULTS') {
@@ -109,3 +122,8 @@ function calcRoute() {
 document.addEventListener('DOMContentLoaded', function() {
 	initialize();
 }, false);
+
+var button_calculate = document.getElementById("calculate-route");
+button_calculate.addEventListener("click",function(e) {
+	calcRoute();return false;
+},false);

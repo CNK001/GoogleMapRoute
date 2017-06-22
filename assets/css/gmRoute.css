@@ -7,14 +7,10 @@
 			height:300px
 		}
 
-		#routeForm {
-			width: 100%;
-			text-align: center;
-		}
 		#directionsPanel {
 			background: #FFFFFF;
-			width: 800px;
-			padding: 20px;
+			width: 100%;
+			padding: 0;
 			margin: 0 auto;
 		}
 		.gmRoute-form {
@@ -27,7 +23,14 @@
 		.adp-directions {
 			width: 100%;
 		}
-
+		.adp-placemark,
+		.adp-warnbox {
+			margin-top: 0 !important;
+			margin-bottom: 0 !important;
+		}
+		.warnbox-content {
+			padding-right: 20px !important;
+		}
 		[class^="icon-"],
 		[class*=" icon-"] {
 			font-family: Ionicons;
@@ -53,14 +56,26 @@
 			width: 50px;
 			border: 1px solid #c0c0c0;
 			background-color: #fff;
+			text-align:center;
+			transition: all .5s ease;
+		}
+
+		.icon-travel-mode:hover {
+			padding-left: 4px;
+			border-color: #0275d8;
 		}
 
 		label > input:checked + span {
-			border:1px solid #f00;
+			color: #fff;
+			background-color: #0275d8;
+			/*border:1px solid #f00;*/
 		}
 
 		.adp-marker {
 			display: none;
+		}
+		.adp-text {
+			font-size: 1.2rem;
 		}
 		.adp-text:before {
 			font-family: Ionicons;
@@ -68,10 +83,37 @@
 			font-size: 1.5rem;
 			margin-right: 5px;
 		}
-
+		.adp-substep {
+			font-size: .9rem;
+		}
 		.adp-legal {
 			font-size: .7rem;
 		}
+		.adp-legal {
+			text-align: center;
+		}
+.modal-show-directions .modal-body {
+	padding: 0;
+}
+
+button.close {
+	text-shadow: none;
+	padding: .1rem .8rem;
+	position: absolute;
+	right: 0;
+	top: 0;
+	opacity: .7;
+	font-size: 2.5rem;
+	z-index:9999;
+}
+button.close :hover {
+	opacity:1;
+	color: #c0c0c0;
+}
+button.close {
+	background-color: transparent;
+}
+
 
 
 /*BS4 XXL by ecaps.okops */
