@@ -20,11 +20,14 @@
 			left: 0;
 			right: 0;
 		}
-		.gmRoute-forum__widget {
+		.gmRoute-form__widget {
 			position:absolute;
 			width: 200px;
 			right:10px;
 			top:0;
+		}
+		.gmROute-form small {
+			text-shadow: 2px 2px 5px #fff;
 		}
 		#show-more {
 			width: 200px;

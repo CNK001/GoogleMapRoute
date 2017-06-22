@@ -22,7 +22,7 @@
 	<div class="gmRoute-form">
 		<div id="routeForm">
 			<div class="row">
-				<div class="gmRoute-forum__widget text-right">
+				<div class="gmRoute-form__widget text-right">
 					<div class="row">
 						<div class="col-12">
 							<div><small>Twoja lokalizacja:</small></div>
