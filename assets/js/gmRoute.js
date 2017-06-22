@@ -27,7 +27,6 @@ var icons = {
 	}
 };
 
-
 function initialize() {
 	var latlng = new google.maps.LatLng(lat,lng);
 	// set direction render options
@@ -37,7 +36,7 @@ function initialize() {
 		zoom: 15,
 		center: latlng,
 		mapTypeId: google.maps.MapTypeId.ROADMAP, //or HYBRID
-		mapTypeControl: true
+		mapTypeControl: true //Map & Satellite labels
 	};
 
 	// add the map to the map placeholder
@@ -52,7 +51,6 @@ function initialize() {
 		icon: icons[default_icon].icon
 	});
 }
-
 
 document.getElementById('routeStart').onkeypress = function(e){
 	if (!e) e = window.event;
