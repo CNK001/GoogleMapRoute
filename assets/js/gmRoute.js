@@ -35,7 +35,7 @@ function initialize() {
 	var rendererOptions = {	draggable: true	};
 	directionsDisplay = new google.maps.DirectionsRenderer(rendererOptions);
 	var myOptions = {
-		zoom: 14,
+		zoom: 15,
 		center: latlng,
 		mapTypeId: google.maps.MapTypeId.ROADMAP,
 		mapTypeControl: false
