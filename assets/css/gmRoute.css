@@ -26,6 +26,9 @@
 			right:10px;
 			top:0;
 		}
+		#show-more {
+			width: 200px;
+		}
 		.btn-calculate-route {
 			width: 38px;
 		}
