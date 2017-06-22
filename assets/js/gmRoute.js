@@ -1,5 +1,5 @@
-var lat = 50.260648;
-var lng = 19.019633;
+var lat = 50.2638321;
+var lng = 19.0328274;
 var map;
 var directionDisplay;
 var directionsService = new google.maps.DirectionsService(lat,lng);
