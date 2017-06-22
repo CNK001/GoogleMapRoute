@@ -22,15 +22,15 @@
 	<div class="gmRoute-form">
 		<div id="routeForm">
 			<div class="row">
-				<div class="col col-md-3 col-xl-3 col-xxl-2 ml-auto mr-2 text-right">
+				<div class="gmRoute-forum__widget text-right">
 					<div class="row">
 						<div class="col-12">
 							<div><small>Twoja lokalizacja:</small></div>
 							<div class="input-group">
 								<input type="text" id="routeStart" class="form-control" placeholder="Twoja lokalizacja...">
 								<span class="input-group-btn"><!-- Calculate route -->
-									<button class="btn btn-secondary" id="calculate-route">
-										<i class="icon ion-ios-search"></i>
+									<button class="btn btn-secondary btn-calculate-route" id="calculate-route">
+										<span class="icon ion-ios-search"></span>
 									</button>
 								</span>
 							</div>

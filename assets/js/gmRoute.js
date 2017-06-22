@@ -121,6 +121,11 @@ function calcRoute() {
 
 document.addEventListener('DOMContentLoaded', function() {
 	initialize();
+
+	$(function () {
+		$('[data-toggle="tooltip"]').tooltip()
+	})
+
 }, false);
 
 var button_calculate = document.getElementById("calculate-route");

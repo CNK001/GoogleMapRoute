@@ -20,6 +20,22 @@
 			left: 0;
 			right: 0;
 		}
+		.gmRoute-forum__widget {
+			position:absolute;
+			width: 200px;
+			right:10px;
+			top:0;
+		}
+		.btn-calculate-route {
+			width: 38px;
+		}
+		.btn-calculate-route .icon:before {
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			line-height: 38px;
+		}
 		.adp-directions {
 			width: 100%;
 		}
@@ -53,7 +69,8 @@
 		.icon-travel-mode {
 			display: block;
 			font-size: 2rem;
-			width: 50px;
+			line-height: 38px;
+			width: 46.5px;
 			border: 1px solid #c0c0c0;
 			background-color: #fff;
 			text-align:center;
