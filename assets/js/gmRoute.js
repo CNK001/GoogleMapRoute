@@ -1,5 +1,6 @@
 var lat = 50.2638321;
 var lng = 19.0328274;
+var default_icon = 'navyblue';
 var map;
 var directionDisplay;
 var directionsService = new google.maps.DirectionsService(lat,lng);
@@ -25,8 +26,6 @@ var icons = {
 		icon: iconBase + 'navy-blue-marker.png'
 	}
 };
-var default_icon = 'navyblue';
-
 
 
 function initialize() {
@@ -37,8 +36,8 @@ function initialize() {
 	var myOptions = {
 		zoom: 15,
 		center: latlng,
-		mapTypeId: google.maps.MapTypeId.ROADMAP,
-		mapTypeControl: false
+		mapTypeId: google.maps.MapTypeId.ROADMAP, //or HYBRID
+		mapTypeControl: true
 	};
 
 	// add the map to the map placeholder
