@@ -1,5 +1,6 @@
-var lat = 50.260648;
-var lng = 19.019633;
+var lat = 50.2638321;
+var lng = 19.0328274;
+var default_icon = 'navyblue';
 var map;
 var directionDisplay;
 var directionsService = new google.maps.DirectionsService(lat,lng);
@@ -25,9 +26,6 @@ var icons = {
 		icon: iconBase + 'navy-blue-marker.png'
 	}
 };
-var default_icon = 'navyblue';
-
-
 
 function initialize() {
 	var latlng = new google.maps.LatLng(lat,lng);
@@ -35,10 +33,10 @@ function initialize() {
 	var rendererOptions = {	draggable: true	};
 	directionsDisplay = new google.maps.DirectionsRenderer(rendererOptions);
 	var myOptions = {
-		zoom: 14,
+		zoom: 15,
 		center: latlng,
-		mapTypeId: google.maps.MapTypeId.ROADMAP,
-		mapTypeControl: false
+		mapTypeId: google.maps.MapTypeId.ROADMAP, //or HYBRID
+		mapTypeControl: true //Map & Satellite labels
 	};
 
 	// add the map to the map placeholder
@@ -53,7 +51,6 @@ function initialize() {
 		icon: icons[default_icon].icon
 	});
 }
-
 
 document.getElementById('routeStart').onkeypress = function(e){
 	if (!e) e = window.event;

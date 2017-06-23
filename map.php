@@ -4,17 +4,21 @@
 <head>
 	<meta charset="<?= $data['charset'] ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>Google maps dojazd</title>
+	<title>Google Maps + Driving Direction (CSS3 + JS + BS4)</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://cdn.rawgit.com/driftyco/ionicons/3.0/dist/css/ionicons.css">
 	<link rel="stylesheet" href="assets/css/gmRoute.css">
 </head>
 <body>
-<div class="container-fluid">
-	<div class="row">
-		<h1>Google maps dojazd</h1>
+<header>
+	<div class="container">
+		<div class="row text-center">
+			<div class="col">
+				<h1 class="text-primary">Google Maps with Driving Directions</h1>
+			</div>
+		</div>
 	</div>
-</div>
+</header>
 <div class="container-fluid">
 	<div class="row">
 		<div id="map_canvas"></div>
@@ -22,7 +26,7 @@
 	<div class="gmRoute-form">
 		<div id="routeForm">
 			<div class="row">
-				<div class="gmRoute-forum__widget text-right">
+				<div class="gmRoute-form__widget text-right">
 					<div class="row">
 						<div class="col-12">
 							<div><small>Twoja lokalizacja:</small></div>
@@ -61,30 +65,26 @@
 			</div>
 		</div>
 	</div>
-
-<div class="modal fade modal-show-directions" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-	<div class="modal-dialog modal-lg">
-		<div class="modal-content">
-			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-				<span aria-hidden="true" class="ion-ios-close-outline"></span>
-			</button>
-			<div class="modal-body">
-				<div id="directionsPanel">...</div>
+	<div class="modal fade modal-show-directions" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true" class="ion-ios-close-outline"></span>
+				</button>
+				<div class="modal-body">
+					<div id="directionsPanel">...</div>
+				</div>
 			</div>
 		</div>
 	</div>
 </div>
-
-</div>
 <footer class="text-center">
 	<a href="https://spoko.space">spoko.space</a>
 </footer>
-
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
-	<script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
-	<script src="https://maps.google.com/maps/api/js?key=<?= $data['key'] ?>"></script>
-	<script src="assets/js/gmRoute.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+<script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+<script src="https://maps.google.com/maps/api/js?key=<?= $data['key'] ?>"></script>
+<script src="assets/js/gmRoute.js"></script>
 </body>
 </html>
