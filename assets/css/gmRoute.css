@@ -2,7 +2,7 @@
 			border-radius: 0px !important;
 		}
 
-		h1,h2,h3,h4 {
+		h1,h2,h3,h4,h5 {
 			font-weight: 300;
 		}
 
@@ -28,16 +28,47 @@
 			position:absolute;
 			width: 200px;
 			right:10px;
+		}
+		.gmRoute-form__widget--tier-1 {
 			top:0;
 		}
+		.gmRoute-form__widget--tier-2 {
+			top: 60px;
+		}
+
 		.gmRoute-form small {
 			text-shadow: 2px 2px 5px #fff;
+		}
+		.gmRoute-form__widget__location-label {
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+		#pac-input {
+			background-color: #fff;
+			/*font-family: Roboto;*/
+			font-size: 14px;
+			font-weight: 300;
+			/*margin-left: 12px;*/
+			/*padding: 0 11px 0 13px;*/
+			text-overflow: ellipsis;
+			height: 38px;
+			width: calc(200px - 40px);
+			position:absolute;
+			top: 25px !important;
+			right: 48px !important;
+			left: auto !important;
 		}
 		#show-more {
 			width: 200px;
 		}
 		.btn-calculate-route {
-			width: 38px;
+			width: 40px;
+			height:38px;
+			position: absolute;
+			right: 0;
+			top: 25px;
+			width: 40px;
 		}
 		.btn-calculate-route .icon:before {
 			position: absolute;

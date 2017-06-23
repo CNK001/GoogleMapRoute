@@ -20,49 +20,44 @@
 	</div>
 </header>
 <div class="container-fluid">
+    <!-- <input id="pac-input" class="controls" type="text" placeholder="Search Box"> -->
+
 	<div class="row">
 		<div id="map_canvas"></div>
 	</div>
 	<div class="gmRoute-form">
 		<div id="routeForm">
-			<div class="row">
-				<div class="gmRoute-form__widget text-right">
-					<div class="row">
-						<div class="col-12">
-							<div><small>Twoja lokalizacja:</small></div>
-							<div class="input-group">
-								<input type="text" id="routeStart" class="form-control" placeholder="Twoja lokalizacja...">
-								<span class="input-group-btn"><!-- Calculate route -->
-									<button class="btn btn-secondary btn-calculate-route" id="calculate-route">
-										<span class="icon ion-ios-search"></span>
-									</button>
-								</span>
-							</div>
-						</div>
-						<div class="col-12">
-							<div><small>Środek transportu</small><!-- Travel mode -->:</div>
-								<label>
-									<input type="radio" name="travelMode" value="DRIVING" hidden checked />
-									<span class="icon-travel-mode icon-check icon-car" data-toggle="tooltip" title="Samochód"></span><!-- Driving -->
-								</label>
-								<label>
-									<input type="radio" name="travelMode" value="TRANSIT" hidden />
-									<span class="icon-travel-mode icon-check icon-transit" data-toggle="tooltip" title="Transport publiczny"></span><!-- Public transport -->
-								</label>
-								<label>
-									<input type="radio" name="travelMode" value="BICYCLING" hidden />
-									<span class="icon-travel-mode icon-check icon-bike" data-toggle="tooltip" title="Rower"></span><!--Bicylcing -->
-								</label>
-								<label>
-									<input type="radio" name="travelMode" value="WALKING" hidden />
-									<span class="icon-travel-mode icon-check icon-walking" data-toggle="tooltip" title="Pieszo"></span><!-- Walking -->
-								</label>
-
-								<button id="show-more" class="btn btn-primary btn-sm invisible" data-toggle="modal" data-target=".modal-show-directions">Pokaż szczegóły dojazdu</button>
-						</div><!-- Calculate route -->
-					</div>
+				<div class="gmRoute-form__widget gmRoute-form__widget--tier-1">
+					<div class="gmRoute-form__widget__location-label"><small>Twoja lokalizacja:</small></div>
+					<input type="text" id="pac-input"  class="form-control" placeholder="Twoja lokalizacja...">
+					<!-- Calculate route -->
+					<button class="btn btn-secondary btn-calculate-route" id="calculate-route" data-toggle="tooltip" data-placement="left" title="Pokaż trasę">
+						<span class="icon ion-ios-search"></span>
+					</button>
 				</div>
-			</div>
+				<div class="gmRoute-form__widget text-right gmRoute-form__widget--tier-2">
+					<div >
+						<div><small>Środek transportu</small><!-- Travel mode -->:</div>
+							<label>
+								<input type="radio" name="travelMode" value="DRIVING" hidden checked />
+								<span class="icon-travel-mode icon-check icon-car" data-toggle="tooltip" title="Samochód"></span><!-- Driving -->
+							</label>
+							<label>
+								<input type="radio" name="travelMode" value="TRANSIT" hidden />
+								<span class="icon-travel-mode icon-check icon-transit" data-toggle="tooltip" title="Transport publiczny"></span><!-- Public transport -->
+							</label>
+							<label>
+								<input type="radio" name="travelMode" value="BICYCLING" hidden />
+								<span class="icon-travel-mode icon-check icon-bike" data-toggle="tooltip" title="Rower"></span><!--Bicylcing -->
+							</label>
+							<label>
+								<input type="radio" name="travelMode" value="WALKING" hidden />
+								<span class="icon-travel-mode icon-check icon-walking" data-toggle="tooltip" title="Pieszo"></span><!-- Walking -->
+							</label>
+
+							<button id="show-more" class="btn btn-primary btn-sm invisible" data-toggle="modal" data-target=".modal-show-directions">Pokaż szczegóły dojazdu</button>
+					</div><!-- Calculate route -->
+				</div>
 		</div>
 	</div>
 	<div class="modal fade modal-show-directions" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -84,7 +79,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
 <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
-<script src="https://maps.google.com/maps/api/js?key=<?= $data['key'] ?>"></script>
+<script src="https://maps.google.com/maps/api/js?key=<?= $data['key'] ?>&libraries=places"></script>
 <script src="assets/js/gmRoute.js"></script>
 </body>
 </html>
