@@ -55,7 +55,9 @@
 								<span class="icon-travel-mode icon-check icon-walking" data-toggle="tooltip" title="Pieszo"></span><!-- Walking -->
 							</label>
 
-							<button id="show-more" class="btn btn-primary btn-sm invisible" data-toggle="modal" data-target=".modal-show-directions">Pokaż szczegóły dojazdu</button>
+							<button id="show-more" class="btn btn-primary btn-sm invisible" data-toggle="modal" data-target=".modal-show-directions">
+								<span data-toggle="tooltip" data-placement="bottom" title="Zobacz szczegółowy plan trasy">Pokaż szczegóły dojazdu</span>
+							</button>
 					</div><!-- Calculate route -->
 				</div>
 		</div>
