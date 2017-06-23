@@ -47,7 +47,7 @@
 		#pac-input {
 			background-color: #fff;
 			/*font-family: Roboto;*/
-			font-size: 14px;
+			font-size: 13px;
 			font-weight: 300;
 			/*margin-left: 12px;*/
 			/*padding: 0 11px 0 13px;*/
@@ -55,6 +55,7 @@
 			height: 38px;
 			width: calc(200px - 40px);
 			position:absolute;
+			padding: 0 2px;
 			top: 25px !important;
 			right: 48px !important;
 			left: auto !important;
