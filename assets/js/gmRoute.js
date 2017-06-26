@@ -34,7 +34,9 @@ while(x--) {
 		console.log("Checked: "+this.checked);
 		console.log("Name: "+this.name);
 		console.log("Value: "+this.value);
-		console.log("Parent: "+this.parent);
+		calcRoute();
+		return false; //show new directions from selected place after change travel mode
+
 	},0);
 }
 
@@ -118,7 +120,8 @@ function initialize() {
 			}
 		});
 		map.fitBounds(bounds);
-		calcRoute();return false; //show directions from selected place
+		calcRoute();
+		return false; //show directions from selected place
 	});
 
 }
@@ -127,7 +130,8 @@ document.getElementById('pac-input').onkeypress = function(e){
 	if (!e) e = window.event;
 	var keyCode = e.keyCode || e.which;
 	if (keyCode == '13') {
-		calcRoute();return false;
+		calcRoute();
+		return false;
 	}
 }
 
@@ -183,5 +187,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 var button_calculate = document.getElementById("calculate-route");
 button_calculate.addEventListener("click",function(e) {
-	calcRoute();return false;
+	calcRoute();
+	return false;
 },false);
