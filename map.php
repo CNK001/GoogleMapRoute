@@ -7,7 +7,7 @@
 	<title>Google Maps + Driving Direction (CSS3 + JS + BS4)</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://cdn.rawgit.com/driftyco/ionicons/3.0/dist/css/ionicons.css">
-	<link rel="stylesheet" href="assets/css/gmRoute.css">
+	<link rel="stylesheet" href="assets/css/gmRoute.min.css">
 </head>
 <body>
 <header>
@@ -80,6 +80,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
 <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
 <script src="https://maps.google.com/maps/api/js?key=<?= $data['key'] ?>&libraries=places"></script>
-<script src="assets/js/gmRoute.js"></script>
+<script src="assets/js/gmRoute.min.js"></script>
 </body>
 </html>
