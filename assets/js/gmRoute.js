@@ -6,6 +6,7 @@ var directionDisplay;
 var directionsService = new google.maps.DirectionsService(lat,lng);
 var show_more = document.getElementById('show-more');
 var iconBase = 'https://cnk.net.pl/testy/img/';
+var input_places_searchbox = document.getElementById('pac-input');
 var icons = {
 	darkgrey: {
 		icon: iconBase + 'dark-grey-marker.png'
