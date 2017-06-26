@@ -34,9 +34,10 @@ while(x--) {
 		console.log("Checked: "+this.checked);
 		console.log("Name: "+this.name);
 		console.log("Value: "+this.value);
-		calcRoute();
-		return false; //show new directions from selected place after change travel mode
-
+		if (input_places_searchbox.value != '') {
+			calcRoute();
+			return false; //show new directions from selected place after change travel mode
+		}
 	},0);
 }
 
