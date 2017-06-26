@@ -35,6 +35,10 @@ while(x--) {
 		console.log("Checked: "+this.checked);
 		console.log("Name: "+this.name);
 		console.log("Value: "+this.value);
+		if (input_places_searchbox.value != '') {
+			calcRoute();
+			return false; //show directions from selected place and travel mode
+		}
 	},0);
 }
 
@@ -78,7 +82,7 @@ function initialize() {
 		var places = searchBox.getPlaces();
 
 		if (places.length == 0) {
-		return;
+			return;
 		}
 
 	// Clear out the old markers.
@@ -118,7 +122,8 @@ function initialize() {
 			}
 		});
 		map.fitBounds(bounds);
-		calcRoute();return false; //show directions from selected place
+		calcRoute();
+		return false; //show directions from selected place
 	});
 
 }
@@ -127,7 +132,8 @@ input_places_searchbox.onkeypress = function(e){
 	if (!e) e = window.event;
 	var keyCode = e.keyCode || e.which;
 	if (keyCode == '13') {
-		calcRoute();return false;
+		calcRoute();
+		return false;
 	}
 }
 
@@ -183,5 +189,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 var button_calculate = document.getElementById("calculate-route");
 button_calculate.addEventListener("click",function(e) {
-	calcRoute();return false;
+	calcRoute();
+	return false;
 },false);
