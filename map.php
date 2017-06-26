@@ -20,8 +20,6 @@
 	</div>
 </header>
 <div class="container-fluid">
-    <!-- <input id="pac-input" class="controls" type="text" placeholder="Search Box"> -->
-
 	<div class="row">
 		<div id="map_canvas"></div>
 	</div>
