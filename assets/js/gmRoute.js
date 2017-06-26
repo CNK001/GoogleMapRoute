@@ -27,6 +27,17 @@ var icons = {
 	}
 };
 
+var travelMode_radios = document.getElementsByName("travelMode");
+x = travelMode_radios.length;
+while(x--) {
+	travelMode_radios[x].addEventListener("change",function() {
+		console.log("Checked: "+this.checked);
+		console.log("Name: "+this.name);
+		console.log("Value: "+this.value);
+		console.log("Parent: "+this.parent);
+	},0);
+}
+
 function initialize() {
 	var latlng = new google.maps.LatLng(lat,lng);
 	// set direction render options
@@ -108,6 +119,7 @@ function initialize() {
 			}
 		});
 		map.fitBounds(bounds);
+		calcRoute();return false; //show directions from selected place
 	});
 
 }
