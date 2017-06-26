@@ -6,6 +6,7 @@ var directionDisplay;
 var directionsService = new google.maps.DirectionsService(lat,lng);
 var show_more = document.getElementById('show-more');
 var iconBase = 'https://cnk.net.pl/testy/img/';
+var input_places_searchbox = document.getElementById('pac-input');
 var icons = {
 	darkgrey: {
 		icon: iconBase + 'dark-grey-marker.png'
@@ -34,7 +35,6 @@ while(x--) {
 		console.log("Checked: "+this.checked);
 		console.log("Name: "+this.name);
 		console.log("Value: "+this.value);
-		console.log("Parent: "+this.parent);
 	},0);
 }
 
@@ -63,9 +63,8 @@ function initialize() {
 	});
 
 	// Create the search box and link it to the UI element.
-	var input = document.getElementById('pac-input');
-	var searchBox = new google.maps.places.SearchBox(input);
-	map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+	var searchBox = new google.maps.places.SearchBox(input_places_searchbox);
+	map.controls[google.maps.ControlPosition.TOP_LEFT].push(input_places_searchbox);
 
 	// Bias the SearchBox results towards current map's viewport.
 	map.addListener('bounds_changed', function() {
@@ -124,7 +123,7 @@ function initialize() {
 
 }
 
-document.getElementById('pac-input').onkeypress = function(e){
+input_places_searchbox.onkeypress = function(e){
 	if (!e) e = window.event;
 	var keyCode = e.keyCode || e.which;
 	if (keyCode == '13') {
