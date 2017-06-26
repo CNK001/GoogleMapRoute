@@ -6,7 +6,6 @@ var directionDisplay;
 var directionsService = new google.maps.DirectionsService(lat,lng);
 var show_more = document.getElementById('show-more');
 var iconBase = 'https://cnk.net.pl/testy/img/';
-var input_places_searchbox = document.getElementById('pac-input');
 var icons = {
 	darkgrey: {
 		icon: iconBase + 'dark-grey-marker.png'
@@ -27,7 +26,7 @@ var icons = {
 		icon: iconBase + 'navy-blue-marker.png'
 	}
 };
-
+var input = document.getElementById('pac-input');
 var travelMode_radios = document.getElementsByName("travelMode");
 x = travelMode_radios.length;
 while(x--) {
@@ -35,10 +34,7 @@ while(x--) {
 		console.log("Checked: "+this.checked);
 		console.log("Name: "+this.name);
 		console.log("Value: "+this.value);
-		if (input_places_searchbox.value != '') {
-			calcRoute();
-			return false; //show directions from selected place and travel mode
-		}
+		console.log("Parent: "+this.parent);
 	},0);
 }
 
@@ -67,8 +63,8 @@ function initialize() {
 	});
 
 	// Create the search box and link it to the UI element.
-	var searchBox = new google.maps.places.SearchBox(input_places_searchbox);
-	map.controls[google.maps.ControlPosition.TOP_LEFT].push(input_places_searchbox);
+	var searchBox = new google.maps.places.SearchBox(input);
+	map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
 	// Bias the SearchBox results towards current map's viewport.
 	map.addListener('bounds_changed', function() {
@@ -82,7 +78,7 @@ function initialize() {
 		var places = searchBox.getPlaces();
 
 		if (places.length == 0) {
-			return;
+		return;
 		}
 
 	// Clear out the old markers.
@@ -122,18 +118,16 @@ function initialize() {
 			}
 		});
 		map.fitBounds(bounds);
-		calcRoute();
-		return false; //show directions from selected place
+		calcRoute();return false; //show directions from selected place
 	});
 
 }
 
-input_places_searchbox.onkeypress = function(e){
+document.getElementById('pac-input').onkeypress = function(e){
 	if (!e) e = window.event;
 	var keyCode = e.keyCode || e.which;
 	if (keyCode == '13') {
-		calcRoute();
-		return false;
+		calcRoute();return false;
 	}
 }
 
@@ -189,6 +183,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
 var button_calculate = document.getElementById("calculate-route");
 button_calculate.addEventListener("click",function(e) {
-	calcRoute();
-	return false;
+	calcRoute();return false;
 },false);
